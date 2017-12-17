@@ -1,17 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Slider Demo App</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content fullscreen padding class="storyContent">
+    <div>
+        <div class="info">
+            <div class="block heading">Individual</div>
+            <div class="block link">See more</div>
+        </div>
+        <ion-slides slidesPerView="3" spaceBetween="5" *ngIf="images.length > 1">
+            <ion-slide *ngFor="let pic of images">
+                <img src="{{pic.img}}" alt="{{pic.name}}" imageViewer class="img-wrapper">
+                <div class="top-img-block">
+                    <div class="heading">{{pic.name}}, {{pic.age}}</div>
+                </div>
+                <div class="bottom-img-block">
+                    <div class="heading bottom-heading">{{pic.hobby}}</div>
+                    <div class="text">{{pic.country}}</div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <div class="margin-top">
+        <div class="info">
+            <div class="block info">Groups</div>
+            <div class="block link">See more</div>
+        </div>
+        <ion-slides slidesPerView="3" spaceBetween="5" *ngIf="images.length > 1">
+            <ion-slide *ngFor="let pic of images">
+                <img src="{{pic.img}}" alt="{{pic.name}}" imageViewer class="img-wrapper">
+                <div class="top-img-block">
+                    <div class="heading">{{pic.name}}, {{pic.age}}</div>
+                </div>
+                <div class="bottom-img-block">
+                    <div class="heading bottom-heading">{{pic.hobby}}</div>
+                    <div class="text">{{pic.country}}</div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
 </ion-content>
